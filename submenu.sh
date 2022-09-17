@@ -12,7 +12,7 @@ do
         break
         ;;
     *)
-        select ACTION in delete view exit;
+        select ACTION in delete view edit exit;
         do 
             case $ACTION in
             delete)
@@ -27,6 +27,10 @@ do
                 cat "$FILE"
                 echo "-----------------------"
                 echo "Exiting script ..."
+                break
+                ;;
+            edit)
+                nano "$FILE"
                 break
                 ;;
             exit)
