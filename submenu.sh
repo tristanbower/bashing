@@ -12,7 +12,7 @@ do
         break
         ;;
     *)
-        select ACTION in delete view edit exit;
+        select ACTION in delete view edit run exit;
         do 
             case $ACTION in
             delete)
@@ -31,6 +31,10 @@ do
                 ;;
             edit)
                 nano "$FILE"
+                break
+                ;;
+            run) 
+                ("/Users/tristanbower/bash_scripts/$FILE")
                 break
                 ;;
             exit)
